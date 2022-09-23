@@ -116,9 +116,10 @@ class AiBarcodeCreatorWebPlugin extends AiBarcodeCreatorPlatform {
 
   @override
   Widget buildCreatorView(BuildContext context) {
-    QrImage qrImage = QrImage(QrCode.fromData(
-        data: AiBarcodeCreatorPlatform.instance.initialValueOfCreator,
-        errorCorrectLevel: QrVersions.auto),);
+    final qrImage = QrImageView(
+      data: AiBarcodeCreatorPlatform.instance.initialValueOfCreator, 
+      version: QrVersions.auto, 
+      size: 200);
 
     return qrImage;
   }
